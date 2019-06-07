@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <ul>
+      <li v-for="specie in species" :key="specie.created">
+        <p>
+          {{ specie.name }}
+        </p>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -12,32 +14,29 @@
 
 import Species from './services/species'
 
+// import {mapState} from 'vuex'
+
 export default {
+  data() {
+    return {
+      species: []
+    }
+  },
   mounted() {
     Species.listSpecies().then(response => {
-      console.log(response.data.results)
+      // console.log(response.data.results)
+      this.species = response.data.results
     })
-  }
+    // this.$store.dispatch('listSpecies')
+  },
+  // computed: {
+  //   ...mapState([
+  //     'species'
+  //   ])
+  // }
 }
 </script>
 
-
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+
 </style>
