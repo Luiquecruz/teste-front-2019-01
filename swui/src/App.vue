@@ -8,6 +8,20 @@
   </div>
 </template>
 
+<script>
+
+import Species from './services/species'
+
+export default {
+  mounted() {
+    Species.listSpecies().then(response => {
+      console.log(response.data.results)
+    })
+  }
+}
+</script>
+
+
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
