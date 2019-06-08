@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+
+    <h3>
+      Listing species
+    </h3>
+
     <ul>
       <li v-for="specie in species" :key="specie.created">
         <p>
@@ -12,28 +17,22 @@
 
 <script>
 
-import Species from './services/species'
-
-// import {mapState} from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
-  data() {
-    return {
-      species: []
-    }
-  },
   mounted() {
-    Species.listSpecies().then(response => {
-      // console.log(response.data.results)
-      this.species = response.data.results
-    })
-    // this.$store.dispatch('listSpecies')
+    this.listSpecies()
   },
-  // computed: {
-  //   ...mapState([
-  //     'species'
-  //   ])
-  // }
+  computed: {
+    ...mapState([
+      'species'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'listSpecies'
+    ])
+  }
 }
 </script>
 
