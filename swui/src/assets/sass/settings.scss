@@ -1,0 +1,43 @@
+// Imports
+
+@import "variables.scss";
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  font-size: $font-base;
+}
+
+body {
+  font-family: $ff;
+  background-color: map-get($colors, dark);
+  color: map-get($colors, white);
+  font-size: $font-sm;
+  font-weight: 400;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+
+  ::-moz-selection {
+    background-color: map-get($colors, secondary);
+    color: map-get($colors, white);
+  }
+
+  ::selection {
+    background-color: map-get($colors, secondary);
+    color: map-get($colors, white);
+  }
+}
+
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+}
+
+button {
+  all: unset;
+}

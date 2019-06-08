@@ -1,0 +1,42 @@
+// Typography
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap');
+
+$ff: 'Roboto Mono', monospace;
+
+$font-base: 10px;
+
+$font-xs: 1.2rem;
+
+$font-sm: 1.4rem;
+
+$font-md: 1.6rem;
+
+$font-lg: 1.8rem;
+
+$font-xl: 2rem;
+
+$font-title: 3.4rem;
+
+// Color palette
+
+/*
+  Color palette reference
+  https://www.colourlovers.com/palette/3806485/retro_star_wars
+*/
+
+$colors: (
+  primary: #17A694,
+  secondary: #FFA72B,
+  tertiary: #FF3C5C,
+  light: #FFE5C0,
+  white: #ffffff,
+  dark: #000000,
+  ghost: rgba(0,0,0,.0)
+);
+
+// Transitions
+
+$time: 200ms;
+
+$ease: cubic-bezier(0.165, 0.84, 0.44, 1);

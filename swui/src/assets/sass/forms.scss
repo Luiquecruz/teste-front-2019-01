@@ -1,0 +1,60 @@
+// Imports
+
+@import "variables.scss";
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin forms {
+  width: 100%;
+
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0 2rem;
+
+
+    label {
+      color: map-get($colors, primary);
+      font-size: $font-sm;
+      line-height: 100%;
+      margin: 0 0 1rem;
+    }
+
+    textarea {
+      resize: none;
+      height: 10rem !important;
+    }
+
+    select {
+      max-height: auto;
+      height: 6rem !important;
+    }
+
+    .field {
+      display: flex;
+      border: .2rem solid map-get($colors, primary);
+      color: map-get($colors, dark);
+      background: map-get($colors, white);
+      font-size: $font-sm;
+      border-radius: .4rem;
+      padding: 1rem;
+      height: 3rem;
+      transition: $ease $time;
+
+      &:focus {
+        outline: none;
+        border-color: map-get($colors, primary);
+        box-shadow: 0 0 0 .2rem map-get($colors, primary);
+      }
+
+      @include input-placeholder {  color: map-get($colors, dark); }
+    }
+  }
+}

@@ -10,12 +10,12 @@ export default new Vuex.Store({
     species: []
   },
   mutations: {
-    setSpecie(state, species) {
+    setSpecie (state, species) {
       state.species = species
     }
   },
   actions: {
-    listSpecies({commit}) {
+    listSpecies ({ commit }) {
       http
         .get('species/')
         .then(response => {

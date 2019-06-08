@@ -1,0 +1,31 @@
+// Imports
+
+@import "variables.scss";
+
+@import "settings.scss";
+
+@import "helpers.scss";
+
+@import "forms.scss";
+
+@import "buttons.scss";
+
+
+// Declarations
+
+.form { @include forms; }
+
+.btn-theme { @include btn-theme; }
+
+.btn-theme-outline { @include btn-theme-outline; }
+
+
+// media queries
+
+@media screen and (max-width: 767px) {
+  /* portrait && landscape */
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* tablets && small laptops */
+}
